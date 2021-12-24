@@ -7,4 +7,4 @@ encoding & cryptography <br>
   <li>make RSA public key</li>
   <li>endianness</li>
 </ol> <br>
-other fetures coming soon
+other features coming soon
