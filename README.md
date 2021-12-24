@@ -6,5 +6,5 @@ encoding & cryptography <br>
   <li>ascii to base64, binary, hex</li>
   <li>make RSA public key</li>
   <li>endianness</li>
-</ol> 
-other feautres coming soon
+</ol> <br>
+other fetures coming soon
