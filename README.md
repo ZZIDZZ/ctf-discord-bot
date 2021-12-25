@@ -7,4 +7,8 @@ discord bots with tools for solving CTFs <br>
   <li>make RSA public key</li>
   <li>endianness</li>
 </ol> <br>
+## networking: <br>
+<ol>
+  <li>send ascii UDP packet</li>
+</ol> <br>
 other features coming soon
