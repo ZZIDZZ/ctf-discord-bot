@@ -6,7 +6,7 @@ discord bots with tools for solving CTFs <br>
   <li>ascii to base64, binary, hex</li>
   <li>make RSA public key</li>
   <li>endianness</li>
-</ol> <br>
+</ol>
 ### networking: <br>
 <ol>
   <li>send ascii UDP packet</li>
