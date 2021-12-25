@@ -4,7 +4,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import importlib
 import os,sys
-from env import encoding
+from env import encoding, networking
 
 
 load_dotenv('.env')
@@ -25,9 +25,11 @@ async def decode(ctx, *args):
     elif args[0] == 'binary':
         await encoding.binaryToAscii(ctx, args[1:])
 
+@client.command()
 async def nc(ctx, *args):
-    importlib.reload(encoding)
-    
+    importlib.reload(networking)
+    if args[0] == 'sendudp':
+        await networking.sendudp(ctx,args[1:])
 
 
 
