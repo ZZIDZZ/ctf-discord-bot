@@ -4,8 +4,8 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import importlib
 import os,sys
-from env import encoding, networking
-
+from env import encoding, networking, misc
+import config
 
 load_dotenv('.env')
 
@@ -14,8 +14,7 @@ PREFIX = os.getenv('PREFIX')
 
 client = commands.Bot(command_prefix=PREFIX)
 
-# CTF Tools
-@client.command() # set pass n mail
+@client.command()
 async def decode(ctx, *args):
     importlib.reload(encoding)
     if args[0] == 'base64':
@@ -30,6 +29,12 @@ async def nc(ctx, *args):
     importlib.reload(networking)
     if args[0] == 'sendudp':
         await networking.sendudp(ctx,args[1:])
+
+@client.command()
+async def exec(ctx, *args):
+    importlib.reload(misc)
+    if str(ctx.author.id) in config.superusers:
+        await misc.exec(ctx, args)
 
 
 

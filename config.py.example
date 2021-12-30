@@ -1,0 +1,2 @@
+# superusers id for executing shell commands
+superusers = ["42069", "12345"]
