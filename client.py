@@ -35,7 +35,18 @@ async def exec(ctx, *args):
     importlib.reload(misc)
     if str(ctx.author.id) in config.superusers:
         await misc.exec(ctx, args)
+    else: await ctx.send(f"you shall not pass")
 
+@client.command()
+async def su(ctx, *args):
+    if str(ctx.author.id) in config.superusers:
+        if "add" in args:
+            config.superusers.append(str(args[1]))
+            await ctx.send(f"added superuser: {ctx.author.id}")
+        elif "rm" in args:
+            config.superusers.remove(str(args[1]))
+            await ctx.send(f"added superuser: {ctx.author.id}")
+    else: await ctx.send(f"you shall not pass")
 
 
 
