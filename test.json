@@ -1,0 +1,64 @@
+{
+    "language": "en",
+    "textAngle": 0.0,
+    "orientation": "Up",
+    "regions": [{
+        "boundingBox": "16,12,731,145",
+        "lines": [{
+            "boundingBox": "16,12,685,40",
+            "words": [{
+                "boundingBox": "16,13,166,39",
+                "text": "Memory"
+            }, {
+                "boundingBox": "199,12,167,33",
+                "text": "Address"
+            }, {
+                "boundingBox": "387,13,170,39",
+                "text": "Register"
+            }, {
+                "boundingBox": "575,12,126,40",
+                "text": "(MAR)"
+            }]
+        }, {
+            "boundingBox": "28,70,508,28",
+            "words": [{
+                "boundingBox": "28,70,224,28",
+                "text": "\u2014Connected"
+            }, {
+                "boundingBox": "269,72,34,26",
+                "text": "to"
+            }, {
+                "boundingBox": "319,70,139,28",
+                "text": "address"
+            }, {
+                "boundingBox": "475,70,61,28",
+                "text": "bus"
+            }]
+        }, {
+            "boundingBox": "28,122,719,35",
+            "words": [{
+                "boundingBox": "28,122,194,35",
+                "text": "\u2014Specifies"
+            }, {
+                "boundingBox": "238,122,139,28",
+                "text": "address"
+            }, {
+                "boundingBox": "392,122,50,28",
+                "text": "for"
+            }, {
+                "boundingBox": "458,122,75,28",
+                "text": "read"
+            }, {
+                "boundingBox": "551,129,36,21",
+                "text": "or"
+            }, {
+                "boundingBox": "601,124,89,26",
+                "text": "write"
+            }, {
+                "boundingBox": "706,129,41,28",
+                "text": "op"
+            }]
+        }]
+    }],
+    "modelVersion": "2021-04-01"
+}

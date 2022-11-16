@@ -1,1 +1,1 @@
-__all__=["encoding", "networking","misc"]
+__all__=["encoding", "networking","misc", "steg"]

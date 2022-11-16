@@ -4,15 +4,23 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import importlib
 import os,sys
-from env import encoding, networking, misc
+from env import encoding, networking, misc, steg
 import config
 
 load_dotenv('.env')
 
 TOKEN = os.getenv('TOKEN')
 PREFIX = os.getenv('PREFIX')
+AZUREKEY = os.getenv('AZURE-COGNITIVE-KEY')
+AZUREENDPOINT = os.getenv('AZURE-COGNITIVE-ENDPOINT')
 
-client = commands.Bot(command_prefix=PREFIX)
+# client = commands.Bot(command_prefix=PREFIX)
+intents = discord.Intents.default()
+intents.members = True
+intents.message_content = True
+intents.messages = True
+intents.guild_messages = True
+client = commands.Bot(intents=intents, command_prefix=PREFIX)
 
 @client.command()
 async def decode(ctx, *args):
@@ -37,6 +45,18 @@ async def exec(ctx, *args):
         await misc.exec(ctx, args)
     else: await ctx.send(f"you shall not pass")
 
+# z-ocr id [attachment]
+@client.command()
+async def ocr(ctx, *args):
+    importlib.reload(steg)
+    if args[0] == "help" or not args[0]:
+        await ctx.send(steg.ocr.__doc__)
+    else:
+        try:
+            await steg.ocr(ctx, args, AZUREKEY, AZUREENDPOINT)
+        except Exception as e:
+            await ctx.send(e)
+
 @client.command()
 async def su(ctx, *args):
     if str(ctx.author.id) in config.superusers:
@@ -53,8 +73,8 @@ async def su(ctx, *args):
 
 
 
+if __name__ == "__main__":
+    print(TOKEN)
+    sys.stdout.flush()        
 
-print(TOKEN)
-sys.stdout.flush()        
-
-client.run(TOKEN)
+    client.run(TOKEN)
